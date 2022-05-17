@@ -1,18 +1,17 @@
-package stellar;
+package stellar.clients;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
+import stellar.EndPoints;
 
 import static io.restassured.http.ContentType.JSON;
 
 public class StellarRestClient {
 
-    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
-
-    protected RequestSpecification getBaseSpec(){
+    protected static RequestSpecification getBaseSpec(){
         return new RequestSpecBuilder ()
                 .setContentType (JSON)
-                .setBaseUri (BASE_URL)
+                .setBaseUri (EndPoints.BASE_URI)
                 .build();
 
     }
